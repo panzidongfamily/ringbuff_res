@@ -1,0 +1,4 @@
+[submodule "ringbuff"]
+	path = ringbuff
+	url = https://github.com/MaJerle/ringbuff
+	branch = master
