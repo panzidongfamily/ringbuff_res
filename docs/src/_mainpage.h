@@ -15,6 +15,7 @@
  *  - Interrupt safe when used as pipe with single write and single read entries
  *  - Suitable for DMA transfers from and to memory with zero-copy between buffer and application memory
  *  - Supports data peek, skip for read and advance for write
+ *  - User friendly MIT license
  *
  * \section         sect_resources Download & Resources
  *
