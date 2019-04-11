@@ -9,7 +9,7 @@ uint32_t d[2];
 ringbuff_t buff_1;
 ringbuff_t buff_2;
 
-/* Create data for buffers. Use sizeof structure, multiplied by 3 (for 3 instances) */
+/* Create data for buffers. Use sizeof structure, multiplied by N (for N instances) */
 /* Add + 1 at the end to make buffer `1` byte bigger */
 uint8_t buff_data_1[sizeof(d) * N + 1];
 /* Use second buffer without + 1 at the end */
