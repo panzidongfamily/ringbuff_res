@@ -10,31 +10,30 @@ ringbuff_t buff_1;
 ringbuff_t buff_2;
 
 /* Create data for buffers. Use sizeof structure, multiplied by N (for N instances) */
-/* Add + 1 at the end to make buffer `1` byte bigger */
+/* Buffer with + 1 bytes bigger memory */
 uint8_t buff_data_1[sizeof(d) * N + 1];
-/* Use second buffer without + 1 at the end */
+/* Buffer without + 1 at the end */
 uint8_t buff_data_2[sizeof(d) * N];
 
 /* Write result values */
 size_t len_1;
 size_t len_2;
 
-/* Initialize buffer */
+/* Initialize buffers */
 ringbuff_init(&buff_1, buff_data_1, sizeof(buff_data_1));
 ringbuff_init(&buff_2, buff_data_2, sizeof(buff_data_2));
 
-/* Now uses buffer to write data */
+/* Write data to buffer */
 for (size_t i = 0; i < N; i++) {
-    /* Prepare dummy data */
+    /* Prepare data */
     d.a = i;
     d.b = i * 2;
 
-    /* Write data to both buffers */
-    /* Copy content from d to buffer */
+    /* Write data to both buffers, memory copy from d to buffer */
     len_1 = ringbuff_write(&buff_1, d, sizeof(d));
     len_2 = ringbuff_write(&buff_2, d, sizeof(d));
 
-    /* Print result */
+    /* Print results */
     printf("Write buffer 1: %d/%d bytes; buffer 2: %d/%d\r\n",
         (int)len_1, (int)sizeof(d),
         (int)len_2, (int)sizeof(d));
