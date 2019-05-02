@@ -6,7 +6,7 @@
  *
  * \section         sect_features Features
  *
- *  - Written in ANSI C99, compatible with size_t for size data types
+ *  - Written in ANSI C99, compatible with `size_t` for size data types
  *  - Platform independent, no architecture specific code
  *  - FIFO (First In First Out) buffer implementation
  *  - No dynamic memory allocation, data is static array
